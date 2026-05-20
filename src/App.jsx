@@ -62,7 +62,7 @@ import CountUp from "react-countup";
 
 import { TypeAnimation } from "react-type-animation";
 
-import Particles from "@tsparticles/react";
+import {Particles} from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 
 export default function App() {
