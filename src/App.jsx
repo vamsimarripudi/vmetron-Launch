@@ -62,7 +62,8 @@ import CountUp from "react-countup";
 
 import { TypeAnimation } from "react-type-animation";
 
-import {Particles} from "@tsparticles/react";
+import { Particles } from "@tsparticles/react";
+
 import { loadSlim } from "@tsparticles/slim";
 
 export default function App() {
@@ -79,10 +80,10 @@ export default function App() {
       x: 0,
       y: 0,
     });
-    const particlesInit = async (engine) => {
-  await loadSlim(engine);
-};
 
+  const particlesInit = async (engine) => {
+    await loadSlim(engine);
+  };
 
   const launchCelebration = () => {
     const duration = 10000;
@@ -199,28 +200,58 @@ export default function App() {
   return (
     <AppContainer>
       <Particles
-  id="tsparticles"
-  init={particlesInit}
-  options={{
-    particles: {
-      number: {
-        value: 45,
-      },
-      color: {
-        value: "#00ff88",
-      },
-      links: {
-        enable: true,
-        color: "#00ff88",
-        opacity: 0.1,
-      },
-      move: {
-        enable: true,
-        speed: 0.8,
-      },
-    },
-  }}
-/>
+        id="tsparticles"
+        init={particlesInit}
+        options={{
+          fullScreen: {
+            enable: false,
+          },
+
+          background: {
+            color: {
+              value: "#020403",
+            },
+          },
+
+          fpsLimit: 120,
+
+          particles: {
+            color: {
+              value: "#00ff88",
+            },
+
+            links: {
+              color: "#00ff88",
+              distance: 120,
+              enable: true,
+              opacity: 0.1,
+              width: 1,
+            },
+
+            move: {
+              enable: true,
+              speed: 0.8,
+            },
+
+            number: {
+              value: 45,
+            },
+
+            opacity: {
+              value: 0.18,
+            },
+
+            size: {
+              value: {
+                min: 1,
+                max: 3,
+              },
+            },
+          },
+
+          detectRetina: true,
+        }}
+      />
 
       <MouseGlow
         style={{
@@ -230,6 +261,7 @@ export default function App() {
       />
 
       <BackgroundGlow />
+
       <GridOverlay />
 
       <FloatingOrb
